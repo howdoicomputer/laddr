@@ -2,6 +2,13 @@
 
 {block title}{_ "Projects"} &mdash; {$dwoo.parent}{/block}
 
+{block js-bottom}
+    {$dwoo.parent}
+    {jsmin "features/sidebar-tags.js"}
+{/block}
+
+{block content-wrapper-open}<div class="container-fluid">{/block}
+
 {block content}
     <div class="page-header">
         {if $.User}
@@ -13,7 +20,49 @@
         {/if}
         <h2>{_ "Civic Projects Directory"}</h2>
     </div>
+    
+    {template tagLink tagData rootUrl linkCls=""}
+        <a class="{$linkCls}" href="{$rootUrl}?tag={$tagData.Handle}">{$tagData.Title}{if $tagData.itemsCount} <span class="badge pull-right">{$tagData.itemsCount|number_format}</span>{/if}</a>
+    {/template}
+    
+     <nav class="sidebar left">
+    <!-- PROJECTS BLOCK -->
+        <section class="tagsSummary projects ">
+            <h4><a href="/projects">{_ "Projects"} <span class="badge">{$projectsTotal|number_format}</span></a>
+            <a class="btn btn-success btn-xs pull-right" href="/projects/create">{glyph "plus"}&nbsp;{_ "Add Project"}</a></h4>
 
+            <header class="btn-group btn-group-justified btn-group-xs" role="group">
+                <a href="#projects-by-topic" class="tagFilter active btn btn-default" role="button" data-group="byTopic">{_ "topics"}</a>
+                <a href="#projects-by-tech" class="tagFilter btn btn-default" role="button" data-group="byTech">{_ "tech"}</a>
+                <a href="#projects-by-event" class="tagFilter btn btn-default" role="button" data-group="byEvent">{_ "events"}</a>
+                <a href="#projects-by-event" class="tagFilter btn btn-default" role="button" data-group="byStage">{_ "stages"}</a>
+            </header>
+
+            <div class="tags list-group byTopic">
+                {foreach item=tag from=$projectsTags.byTopic}
+                    {tagLink tagData=$tag rootUrl="/projects" linkCls="list-group-item"}
+                {/foreach}
+            </div>
+
+            <div class="tags list-group byTech" style="display: none">
+                {foreach item=tag from=$projectsTags.byTech}
+                    {tagLink tagData=$tag rootUrl="/projects" linkCls="list-grou-item"}
+                {/foreach}
+            </div>
+
+            <div class="tags list-group byEvent" style="display: none">
+                {foreach item=tag from=$projectsTags.byEvent}
+                    {tagLink tagData=$tag rootUrl="/projects" linkCls="list-group-item"}
+                {/foreach}
+            </div>
+
+            <div class="tags list-group byStage" style="display: none">
+                {foreach item=stage from=$projectsStages}
+                    <a class="list-group-item" href="/projects?stage={$stage.Stage}">{$stage.Stage} <span class="badge pull-right">{$stage.itemsCount|number_format}</span></a>
+                {/foreach}
+            </div>
+        </section>
+    </nav>
     {foreach item=Project from=$data}
         <div class="project-listing row-fluid clearfix">
             <div class="col-sm-8">
@@ -65,3 +114,5 @@
         <em>No projects were found, try creating one{if count($conditions)} or <a href="?">browse without any filters</a>{/if}.</em>
     {/foreach}
 {/block}
+
+{block content-wrapper-close}</div>{/block}

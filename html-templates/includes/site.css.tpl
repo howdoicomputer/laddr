@@ -10,4 +10,6 @@
     ,'laddr.css'
     ,'pages/*'
     ,'branding/*'
+    ,'features/content-editable.css'
 )}
+

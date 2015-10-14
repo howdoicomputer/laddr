@@ -58,6 +58,7 @@
     <div class="row">
 
         <section class="col-md-4 announcements">
+        Foo
             {contentBlock "bigscreen-announcement"}
         </section>
 

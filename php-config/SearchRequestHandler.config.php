@@ -1,6 +1,5 @@
 <?php
 
-if ($GLOBALS['Session']->hasAccountLevel('User')) {
     SearchRequestHandler::$searchClasses[Emergence\People\User::class] = [
         'fields' => [
             [
@@ -18,7 +17,6 @@ if ($GLOBALS['Session']->hasAccountLevel('User')) {
         ],
         'conditions' => ['AccountLevel != "Deleted"']
     ];
-}
 
 SearchRequestHandler::$searchClasses[Tag::class] = [
     'fields' => [

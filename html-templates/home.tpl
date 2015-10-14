@@ -142,8 +142,11 @@
     </aside>
 
     <section class="content fixed-fixed">
-        {include includes/home.announcements.tpl}
-
+    
+        <section class="announcements well">
+        <h2>Announcements</h2>
+            {contentBlock "announcements"}
+        </section>
         <section>
             <h2>{_ "Latest Project Activity"}</h2>
 

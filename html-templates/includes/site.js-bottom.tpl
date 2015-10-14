@@ -8,7 +8,10 @@
     ,'typeahead.bundle.js'
     ,'bootstrap-combobox.js'
     ,'bootstrap-tagsinput.js'
+    ,'jquery.filedrop.js'
+    ,'markdown.js'
     ,'features/site-search.js'
     ,'features/site-search-renderers/*'
     ,'features/tooltips.js'
+    ,'features/content-editable.js'  
 )}
