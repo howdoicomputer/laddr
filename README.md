@@ -66,7 +66,7 @@ You can access the emergence console on `127.0.0.1:9023`. If you have software r
 
 When the box has fully initialized and you can access the emergence console then you'll be able to create a new site. Emergence has some sort of voodoo magic that can pull in the Laddr code and run it. As a note, CORS protection will prevent you from creating a user and logging in. To prevent that you'll need to provided a comma deliminated list of alernate hostnames: `localhost:8080`, `127.0.0.1:8080`. The PHP code that drives Laddr will iterate over that array.
 
-Set the primary hostname to `127.0.0.1:80`.
+Set the primary hostname to `127.0.0.1:80` and choose `v1.laddr.us` as the parent site.
 
 [Projects Directory]: http://codeforphilly.org/projects
 [Projects list available via dynamic CSV]: http://codeforphilly.org/projects.csv
