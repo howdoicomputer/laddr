@@ -62,9 +62,11 @@ Vagrant will forward the following ports:
 * 9023 => 9023
 * 80 => 8080
 
-You can access the emergence console on `127.0.0.1:8080`. If you have software running that is operating on port `8080` then you'll need to specify a different port to forward to.
+You can access the emergence console on `127.0.0.1:9023`. If you have software running that is operating on port `9023` then you'll need to specify a different port to forward to.
 
 When the box has fully initialized and you can access the emergence console then you'll be able to create a new site. Emergence has some sort of voodoo magic that can pull in the Laddr code and run it. As a note, CORS protection will prevent you from creating a user and logging in. To prevent that you'll need to provided a comma deliminated list of alernate hostnames: `localhost:8080`, `127.0.0.1:8080`. The PHP code that drives Laddr will iterate over that array.
+
+Set the primary hostname to `127.0.0.1:80`.
 
 [Projects Directory]: http://codeforphilly.org/projects
 [Projects list available via dynamic CSV]: http://codeforphilly.org/projects.csv
