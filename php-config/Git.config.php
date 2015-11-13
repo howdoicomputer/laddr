@@ -1,9 +1,9 @@
 <?php
 
 Git::$repositories['laddr'] = [
-    'remote' => 'https://github.com/CfABrigadePhiladelphia/laddr.git'
-    ,'originBranch' => 'releases/v2'
-    ,'workingBranch' => 'releases/v2'
+    'remote' => 'https://github.com/howdoicomputer/laddr.git'
+    ,'originBranch' => 'production'
+    ,'workingBranch' => 'production'
     ,'localOnly' => true
     ,'trees' => [
         'html-templates',

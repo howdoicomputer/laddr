@@ -10,7 +10,7 @@ Site::$skipSessionPaths[] = 'thumbnail.php';
 
 
 // uncomment or set to an array of specific hostnames to enable CORS
-//Site::$permittedOrigins = '*';
+Site::$permittedOrigins = '*';
 
 
 // load locale before scripts execute

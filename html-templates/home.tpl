@@ -97,7 +97,7 @@
                 <a href="#events-by-topic" class="tagFilter btn btn-default" role="button" data-group="byTopic">{_ "topics"}</a>
             </header>
             <ul class="tags list-group">
-                <li class="list-group-item"><a href="#">Workshops <span class="badge pull-right">100/3</span></a></li>
+                <li class="list-group-item"><a href="#">Workshoops <span class="badge pull-right">100/3</span></a></li>
                 <li class="list-group-item"><a href="#">Hackathons <span class="badge pull-right">10/4</span></a></li>
                 <li class="list-group-item"><a href="#">Social <span class="badge pull-right">6/3</span></a></li>
             </ul>
@@ -145,7 +145,7 @@
         {include includes/home.announcements.tpl}
 
         <section>
-            <h2>{_ "Latest Project Activity"}</h2>
+            <h2>{_ "Latest Project Foobar"}</h2>
 
             <div class="row-fluid">
                 {foreach item=Article from=$activity}
